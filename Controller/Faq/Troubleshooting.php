@@ -3,6 +3,7 @@ namespace VaxLtd\ProdfaqsLibrary\Controller\Faq;
 
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Action\Context;
+use Psr\Log\LoggerInterface;
 
 /**
  *
@@ -22,6 +23,9 @@ class Troubleshooting extends \Magento\Framework\App\Action\Action
      */
     protected $_coreRegistry = null;
 
+
+    protected $logger;
+
     /**
      * @param Context $context
      * @param PageFactory $resultPageFactory
@@ -32,11 +36,13 @@ class Troubleshooting extends \Magento\Framework\App\Action\Action
         Context $context,
         PageFactory $resultPageFactory,
         \VaxLtd\ProdfaqsLibrary\Model\Faqs $faqsModel,
-        \Magento\Framework\Registry $registry
+        \Magento\Framework\Registry $registry,
+        LoggerInterface $logger
     ) {
         $this->faqsModel = $faqsModel;
         $this->_coreRegistry = $registry;
         $this->resultPageFactory = $resultPageFactory;
+        $this->logger = $logger;
         parent::__construct($context);
     }
 

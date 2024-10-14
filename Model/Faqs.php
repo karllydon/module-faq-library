@@ -283,7 +283,7 @@ class Faqs
         }
 
         if ($questionType) {
-            $searchParams["question_type"] = $questionType;
+            $searchParams["question_type"] = is_array($questionType)? json_encode($questionType): $questionType;
         }
 
         if ($categoryId) {

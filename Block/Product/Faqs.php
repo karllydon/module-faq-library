@@ -229,9 +229,6 @@ class Faqs extends \VaxLtd\ProdfaqsLibrary\Block\Faqs
             $topics = $this->getCategoryTopicByQuestionType($currentCategory->getId(), $question_type);
         }
 
-        
-        $this->logger->debug("FAQS BLOCK GET CATEGORY TOPIC " .    print_r($topics, true));
-
 
         return $topics;
     }

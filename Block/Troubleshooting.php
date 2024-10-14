@@ -228,9 +228,8 @@ class Troubleshooting extends \VaxLtd\ProdfaqsLibrary\Block\AbstractBlock
      * @param $question_id
      * @return $this
      */
-    public function setFaq($question_id)
-    {
-
+    public function setFaq($question_id): static
+    {   
         $this->_currentQuestion = $question_id;
         $this->_currentTopic = $this->faqsModel->loadFaq($this->_currentQuestion)["topic_id"];
 
@@ -248,7 +247,7 @@ class Troubleshooting extends \VaxLtd\ProdfaqsLibrary\Block\AbstractBlock
     public function getFaqHtml($question_id)
     {
         $this->setFaq($question_id);
-        return $this->setTemplate("VaxLtd_Prodfaqs::question.phtml")->toHtml();
+        return $this->setTemplate("VaxLtd_ProdfaqsLibrary::question.phtml")->toHtml();
     }
 
     /**

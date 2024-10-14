@@ -3,16 +3,21 @@ namespace VaxLtd\ProdfaqsLibrary\Controller\Faq;
 
 use Magento\Framework\View\Result\PageFactory;
 use Magento\Framework\App\Action\Context;
+use Psr\Log\LoggerInterface;
 
 class GetFaq extends \Magento\Framework\App\Action\Action
 {
     protected $resultPageFactory;
 
+    protected $logger;
+
     public function __construct(
         Context $context,
-        PageFactory $resultPageFactory
+        PageFactory $resultPageFactory,
+        LoggerInterface $logger
     ) {
         $this->resultPageFactory = $resultPageFactory;
+        $this->logger = $logger;
         parent::__construct($context);
     }
 
