@@ -1,0 +1,13 @@
+{
+    "name": "vaxltd/module-prodfaqs-library",
+    "description": "VaxLtd Prod FAQs Library module",
+    "type": "magento2-module",
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "VaxLtd\\ProdfaqsLibrary\\": ""
+        }
+    }
+}

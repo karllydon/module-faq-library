@@ -1,0 +1,225 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="prodfaqs" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+            <label>Product Faqs (Library V2)</label>
+            <tab>vaxltd</tab>
+            <resource>VaxLtd_ProdfaqsLibrary::faqs_config</resource>
+            <group id="list" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Faqs Page Settings</label>
+                <field id="enabled" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="library_url" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Library Base URL</label>
+                </field>
+                <field id="library_api_key" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Library API Key</label>
+                </field>
+                <field id="page_title" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Page Title</label>
+                </field>
+                <field id="identifier" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Identifier</label>
+                </field>
+                <field id="meta_keywords" translate="label" type="textarea" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Keywords</label>
+                </field>
+                <field id="meta_description" translate="label" type="textarea" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Meta Description</label>
+                </field>
+                <field id="display_topics" translate="label" type="select" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Display Selected Topics</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>display selected OR all topics on main page</comment>
+                </field>
+                <field id="show_number_of_questions" translate="label" type="text" sortOrder="70" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Number of Questions</label>
+                    <comment>show number of selected questions with each category (0 for none)</comment>
+                </field>
+                <field id="enable_view_more" translate="label" type="select" sortOrder="80" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Read More</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>show read more link under category</comment>
+                </field>
+                <field id="enable_accordion" translate="label" type="select" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Accordion</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="answer_length" translate="label" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Visible Answer Length</label>
+                    <comment>maximum length of answer, visible for listing pages (0 for default length)</comment>
+                </field>
+            </group>
+            <group id="product_questions" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Product Faqs</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="title" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Heading/Title</label>
+                    <comment>Heading / Title of product's faqs</comment>
+                </field>
+                <field id="sortby" translate="label" type="select" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Sort By</label>
+                    <source_model>VaxLtd\Prodfaqs\Model\Config\Source\Sortby</source_model>
+                    <comment>sort product questions</comment>
+                </field>
+                <field id="enable_ask" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Ask Question</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="allow_customers" translate="label" type="select" sortOrder="25" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allowed Customers</label>
+                    <source_model>VaxLtd\Prodfaqs\Model\Config\Source\Ratingcustomers</source_model>
+                    <comment>allow customers to ask question</comment>
+                </field>
+                <field id="open_form" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Open Question Form</label>
+                    <source_model>VaxLtd\Prodfaqs\Model\Config\Source\PopupSlide</source_model>
+                    <comment>Open question form in a popup/slide down.</comment>
+                </field>
+
+            </group>
+
+            <!-- New Configurations on module update -->
+
+            <group id="answers" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Faq Answer Settings (Product Page)</label>
+
+                <field id="enable_ask" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Add Answer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="allow_customers" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allowed Customers To Answer</label>
+                    <source_model>VaxLtd\Prodfaqs\Model\Config\Source\Ratingcustomers</source_model>
+                </field>
+                <field id="enable_likes" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Likes / Dislikes</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="likes_allow_customers" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Likes/Dislikes Allowed Customers</label>
+                    <source_model>VaxLtd\Prodfaqs\Model\Config\Source\Ratingcustomers</source_model>
+                </field>
+            </group>
+
+            <!-- End of new configurations on module update -->
+            <group id="rating" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Faqs Rating</label>
+                <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable Rating</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="allow_customers" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Allow Faqs Rating</label>
+                    <source_model>VaxLtd\Prodfaqs\Model\Config\Source\Ratingcustomers</source_model>
+                </field>
+            </group>
+            <group id="general" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Faqs Block Settings</label>
+                <field id="faq_block" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Faqs Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="faq_search_block" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Faqs Search Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="faq_maxtopic" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum number of topics displayed in block</label>
+                </field>
+                <field id="tags_block" translate="label" type="select" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Tags Block</label>
+                    <source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+                </field>
+                <field id="max_tags" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Maximum tags to show in block</label>
+                    <comment>leave empty or '0' to show all tags</comment>
+                </field>
+            </group>
+            <group id="email" translate="label" type="text" sortOrder="35" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Email Options</label>
+                <field id="recipient" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Send Emails To</label>
+                    <validate>validate-email</validate>
+                </field>
+                <field id="sender" translate="label" type="select" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                </field>
+                <field id="template" translate="label comment" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+                <field id="replytemplate" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Reply Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+
+                <field id="answertemplate" translate="label" type="select" sortOrder="31" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Answer Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                </field>
+
+            </group>
+
+            <group id="ajaxloader" type="text" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Ajax Loader Image for Product Page</label>
+                <field id="placeholder" type="image" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label></label>
+                    <backend_model>Magento\Config\Model\Config\Backend\Image</backend_model>
+                    <upload_dir config="system/filesystem/media" scope_info="1">prodfaqs/ajax</upload_dir>
+                    <base_url type="media" scope_info="1">prodfaqs/ajax</base_url>
+                </field>
+            </group>
+
+            <group id="google_options" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Google Captcha Keys (reCAPTCHA v2)</label>
+                <field id="captchastatus" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Enable</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="googleprivatekey" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Captcha Secret Key</label>
+                    <validate>required-entry</validate>
+                    <comment>(reCAPTCHA v2): Get Key From https://www.google.com/recaptcha/admin</comment>
+                    <depends>
+                        <field id="captchastatus">1</field>
+                    </depends>
+                </field>
+                <field id="googlepublickey" translate="label" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Google Captcha Site Key</label>
+                    <validate>required-entry</validate>
+                    <comment>(reCAPTCHA v2): Get Key From https://www.google.com/recaptcha/admin</comment>
+                    <depends>
+                        <field id="captchastatus">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="seo" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>SEO</label>
+                <field id="url_suffix" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>URL Suffix</label>
+                    <comment>(eg: .html)</comment>
+                </field>
+            </group>
+
+
+
+
+        </section>
+    </system>
+</config>

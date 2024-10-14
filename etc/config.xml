@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © 2015 Magento. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <prodfaqslibrary>
+            <list>
+                <enabled>1</enabled>
+                <use_library>0</use_library>
+                <library_url></library_url>
+                <library_api_key>25b537055acfa61b3daa847dde47508dbf98c724ce58b908e063a5fedfcae5cb</library_api_key>
+                <page_title>Faqs</page_title>
+                <identifier>faqs</identifier>
+                <meta_keywords>Faqs</meta_keywords>
+                <meta_description>Faqs</meta_description>
+                <display_topics>5</display_topics>
+                <show_number_of_questions>5</show_number_of_questions>
+                <enable_view_more>1</enable_view_more>
+                <enable_accordion>1</enable_accordion>
+                <answer_length></answer_length>
+            </list>
+            <product_questions>
+                <enable>1</enable>
+                <title>Product Faqs</title>
+                <sortby>latest</sortby>
+                <enable_ask>1</enable_ask>
+                <allow_customers>all</allow_customers>
+                <open_form>popup</open_form>
+            </product_questions>
+            <rating>
+                <enable>1</enable>
+                <allow_customers>all</allow_customers>
+            </rating>
+            <general>
+                <faq_block>1</faq_block>
+                <faq_search_block>1</faq_search_block>
+                <faq_maxtopic>5</faq_maxtopic>
+                <tags_block>1</tags_block>
+                <max_tags>5</max_tags>
+            </general>
+            <email>
+                <recipient>admin@example.com</recipient>
+                <sender>general</sender>
+                <template>prodfaqs_email_template</template>
+                <replytemplate>prodfaqs_email_replytemplate</replytemplate>
+                <answertemplate>prodfaqs_email_answertemplate</answertemplate>
+            </email>
+            <google_options>
+                <captchastatus>0</captchastatus>
+                <googleprivatekey></googleprivatekey>
+                <googlepublickey></googlepublickey>
+            </google_options>
+            <seo>
+                <url_suffix>.html</url_suffix>
+            </seo>
+        </prodfaqslibrary>
+    </default>
+</config>
