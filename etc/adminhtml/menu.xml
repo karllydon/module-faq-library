@@ -8,7 +8,7 @@
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
     <menu>
         <add id="VaxLtd_ProdfaqsLibrary::faqs_main" title="Product Faqs Library" module="VaxLtd_ProdfaqsLibrary" sortOrder="10" parent="VaxLtd_CoreTab::core" resource="VaxLtd_ProdfaqsLibrary::faqs_main"/>
-        <add id="VaxLtd_ProdfaqsLibrary::topic" title="Manage Topics" module="VaxLtd_ProdfaqsLibrary" sortOrder="10" parent="VaxLtd_Prodfaqs::faqs_main" action="prodfaqsLibrary/topic/index" resource="VaxLtd_ProdfaqsLibrary::topic"/>
+        <add id="VaxLtd_ProdfaqsLibrary::topic" title="Manage Topics" module="VaxLtd_ProdfaqsLibrary" sortOrder="10" parent="VaxLtd_ProdfaqsLibrary::faqs_main" action="prodfaqsLibrary/topic/index" resource="VaxLtd_ProdfaqsLibrary::topic"/>
         <add id="VaxLtd_ProdfaqsLibrary::faqs" title="Manage Faqs" module="VaxLtd_ProdfaqsLibrary" sortOrder="20" parent="VaxLtd_ProdfaqsLibrary::faqs_main" action="prodfaqsLibrary/faqs/index" resource="VaxLtd_ProdfaqsLibrary::faqs"/>
         <add id="VaxLtd_ProdfaqsLibrary::importexport" title="Manage Import/Export" module="VaxLtd_ProdfaqsLibrary" sortOrder="30" parent="VaxLtd_ProdfaqsLibrary::faqs_main" action="prodfaqsLibrary/faqs/importexport" resource="VaxLtd_ProdfaqsLibrary::importexport"/>
     </menu>

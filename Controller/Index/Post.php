@@ -1,5 +1,5 @@
 <?php
-namespace VaxLtd\Prodfaqs\Controller\Index;
+namespace VaxLtd\ProdfaqsLibrary\Controller\Index;
 
 use Magento\Framework\App\Action\Context;
 use Magento\Framework\Controller\Result\JsonFactory;

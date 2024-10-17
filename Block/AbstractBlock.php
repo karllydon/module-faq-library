@@ -21,7 +21,7 @@ abstract class AbstractBlock extends Template
      * @param Template\Context $context
      * @param array $data
      * @param \Magento\Framework\Registry $coreRegistry
-     * @param \VaxLtd\Prodfaqs\Model\FaqsFactory $faqsFactory
+     * @param \VaxLtd\ProdfaqsLibrary\Model\FaqsFactory $faqsFactory
      */
     public function __construct(
         Template\Context $context,

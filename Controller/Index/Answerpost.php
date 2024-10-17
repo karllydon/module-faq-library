@@ -46,7 +46,7 @@ class Answerpost extends \Magento\Framework\App\Action\Action
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
         \Magento\Framework\Mail\Template\TransportBuilder $transportBuilder,
         \Magento\Store\Model\StoreManagerInterface $storeManager,
-        \VaxLtd\Prodfaqs\Helper\Data $myModuleHelper
+        \VaxLtd\ProdfaqsLibrary\Helper\Data $myModuleHelper
     ) {
             
         $this->jsonFactory = $jsonFactory;

@@ -20,7 +20,7 @@ class Faqs
     protected $_eventPrefix = 'prodfaqsLibrary_faqs';
 
     /**
-     * @var \VaxLtd\Prodfaqs\Helper\Data
+     * @var \VaxLtd\ProdfaqsLibrary\Helper\Data
      */
     protected $helper;
 
@@ -89,8 +89,8 @@ class Faqs
      */
     public function loadFaq($faq_id)
     {
-        
-        
+
+
         $searchParams = ["id" => $faq_id];
 
         $faq =  $this->search->search($searchParams, "getFaqs");
@@ -236,7 +236,7 @@ class Faqs
         }
 
         if ($questionType) {
-            $searchParams["question_type"] = is_array($questionType)? json_encode($questionType): $questionType;
+            $searchParams["question_type"] = is_array($questionType) ? json_encode($questionType) : $questionType;
         }
 
 
@@ -276,19 +276,70 @@ class Faqs
      */
     public function getFaqsByTopicAndCategory($topicId, $publicOnly = true, $questionType = null, $categoryId = null)
     {
+
+        $this->logger->debug("GET FAQS BY TOPIC AND CATEGORY");
+
+        $this->logger->debug("topic_id {$topicId}");
+        $this->logger->debug("public only {$publicOnly}");
+        $this->logger->debug("question type " . print_r($questionType, true));
+        $this->logger->debug("category id {$categoryId}");
+
+
+
+
+
+
+
         $searchParams = ["topic_id" => $topicId];
-        
+
         if ($publicOnly) {
             $searchParams["public_only"] = 1;
         }
 
         if ($questionType) {
-            $searchParams["question_type"] = is_array($questionType)? json_encode($questionType): $questionType;
+            $searchParams["question_type"] = is_array($questionType) ? json_encode($questionType) : $questionType;
         }
 
         if ($categoryId) {
             $searchParams["category_id"] = $categoryId;
         }
-        return $this->search->search($searchParams, "getFaqs");
+
+        $this->logger->debug("SEARCH PARAMS " . print_r($searchParams, true));
+
+
+
+
+
+
+        return $this->search->search($searchParams, searchEndpoint: "getFaqs");
+    }
+
+    /**
+     * @param $questionId
+     * @param $topicId
+     * @param $publicOnly
+     * @param $questionType
+     * @param $categoryId
+     * @return array
+     */
+    public function getFaqAnswerFromTopicAndCategory($questionId, $topicId, $publicOnly = true, $questionType = null, $categoryId = null)
+    {
+
+
+        $searchParams = ["id" => $questionId, "topic_id" => $topicId];
+
+        if ($publicOnly) {
+            $searchParams["public_only"] = 1;
+        }
+
+        if ($questionType) {
+            $searchParams["question_type"] = is_array($questionType) ? json_encode($questionType) : $questionType;
+        }
+
+        if ($categoryId) {
+            $searchParams["category_id"] = $categoryId;
+        }
+
+        return $this->search->search($searchParams, searchEndpoint: "getFaqs");
     }
 }

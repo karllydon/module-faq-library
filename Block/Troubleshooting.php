@@ -179,6 +179,7 @@ class Troubleshooting extends \VaxLtd\ProdfaqsLibrary\Block\AbstractBlock
         return $questions;
     }
 
+
     /**
      * @param $publicOnly
      * @param $questionType
@@ -187,19 +188,18 @@ class Troubleshooting extends \VaxLtd\ProdfaqsLibrary\Block\AbstractBlock
      */
     public function getFaqAnswer($publicOnly, $questionType, $question_id = null)
     {
+
+    
         $question_id = $question_id ?: $this->getCurrentQuestionId();
+        $categoryId = $this->getData('category_id');
+        $curentCategory = $this->getCurrentCategory();
 
-        $questionCollection = $this->getQuestionsByCategory($publicOnly, $questionType);
+        if ($curentCategory != null) {
+            $categoryId = $curentCategory->getId();
+        }
 
-        $filter = function($question) use ($question_id) {
-            return $question["id"] == $question_id;
-        };
-
-        $faqAnswer = array_filter($questionCollection, $filter)[0];
-
-
-
-        return $faqAnswer;
+        $faqAnswer = $this->faqsModel->getFaqAnswerFromTopicAndCategory($question_id, $this->getCurrentTopicId(), $publicOnly, $questionType, $categoryId);
+        return $faqAnswer[0];
     }
 
 
@@ -249,6 +249,7 @@ class Troubleshooting extends \VaxLtd\ProdfaqsLibrary\Block\AbstractBlock
         $this->setFaq($question_id);
         return $this->setTemplate("VaxLtd_ProdfaqsLibrary::question.phtml")->toHtml();
     }
+
 
     /**
      * @return mixed|null
@@ -313,4 +314,12 @@ class Troubleshooting extends \VaxLtd\ProdfaqsLibrary\Block\AbstractBlock
 
         return array_values($topics);
     }
+
+
+    public function getLink(){
+        return "javascript:void(0)";
+    }
+
+
+
 }

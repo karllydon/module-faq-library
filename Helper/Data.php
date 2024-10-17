@@ -84,7 +84,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
     public function isModuleEnabled()
     {
         
-        if ($this->isModuleOutputEnabled('VaxLtd_Prodfaqs') &&
+        if ($this->isModuleOutputEnabled('VaxLtd_ProdfaqsLibrary') &&
                 $this->scopeConfig->isSetFlag(
                     self::XML_FAQS_ENABLE,
                     \Magento\Store\Model\ScopeInterface::SCOPE_STORE

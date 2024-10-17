@@ -29,7 +29,7 @@ class GetFaq extends \Magento\Framework\App\Action\Action
             ->createBlock(\VaxLtd\ProdfaqsLibrary\Block\Troubleshooting::class)
             ->setFaq($faq_id)
             ->setTemplate("VaxLtd_ProdfaqsLibrary::question.phtml")->toHtml();
-
+        $this->logger->debug("RESPONSE HTML " . $html);
         $this->getResponse()->setBody($html);
     }
 }
